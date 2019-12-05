@@ -68,8 +68,9 @@ public class DriveTrain {
     }
 
     public void driveVoltage(double leftVoltage, double rightVoltage){
-        leftController.set(ControlMode.Current, leftVoltage);
-        rightController.set(ControlMode.Current, rightVoltage);
+
+        leftController.set(ControlMode.PercentOutput, leftVoltage / 12.);
+        rightController.set(ControlMode.PercentOutput, rightVoltage / 12.);
     }
 
     public void updatePosition(){
